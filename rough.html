@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        /* ... (same CSS as before) ... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Product</h2>
+        <form action="/" method="post" id="productForm">
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" name="productName" required>
+            
+            <label for="productDescription">Product Description:</label>
+            <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+            
+            <label for="productPrice">Product Price:</label>
+            <input type="number" id="productPrice" name="productPrice" min="0.01" step="0.01" required>
+            
+            <label for="productImage">Product Image (URL):</label>
+            <input type="url" id="productImage" name="productImage" required>
+            
+            <button type="submit">Add Product</button>
+        </form>
+        <div id="feedbackMessage"></div>
+    </div>
+
+    <script>
+        document.getElementById("productForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const productName = document.getElementById("productName").value;
+            const productDescription = document.getElementById("productDescription").value;
+            const productPrice = document.getElementById("productPrice").value;
+            const productImage = document.getElementById("productImage").value;
+
+            // Here you can add code to handle the form submission, such as sending the data to a server using fetch() or XMLHttpRequest.
+
+            // For this example, we'll just display a feedback message with the entered values.
+            const feedbackMessage = document.getElementById("feedbackMessage");
+            feedbackMessage.innerHTML = `
+                <p><strong>Product Name:</strong> ${productName}</p>
+                <p><strong>Product Description:</strong> ${productDescription}</p>
+                <p><strong>Product Price:</strong> ${productPrice}</p>
+                <p><strong>Product Image URL:</strong> ${productImage}</p>
+                <p>Product added successfully!</p>
+            `;
+
+            // Clear the form after submission
+            document.getElementById("productForm").reset();
+        });
+    </script>
+</body>
+</html>
