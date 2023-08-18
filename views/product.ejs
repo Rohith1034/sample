@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="layer">
+        <% for( let index=0; index < foundItems.length; index++ ) { %>
+            <h1>
+                <%= foundItems[index].productname %>
+            </h1>
+            <h1>
+                <%= foundItems[index].productprice %>
+            </h1>
+            <h1>
+                <%= foundItems[index].productdescription %>
+            </h1>
+            <% } %>
+    </div>
+    <%- include("partials/footer.ejs") %>
+
+    <style>
+        .layer {
+            margin-top: 90px;
+        }
+    </style>

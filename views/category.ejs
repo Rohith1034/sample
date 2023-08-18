@@ -1,0 +1,98 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="layer">
+        <div class= "row rows" id="container">
+            <% categoryItems.forEach(item=> { %>
+                <div class= "<%=item.product_id  %> col-lg-3 col-md-6 col-sm-6 row_cards " style="margin-top: 20px;">
+                    <div style="width: 18rem;" class="card cardmargin">
+                        <img src=<%= item.productimg %> class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 style="text-align: center;" class="card-title">
+                                <%= item.productname %>
+                            </h3>
+                            <p class="card-text">
+                                <%= item.productdescription %>
+                            </p>
+                            <p class="card-text"><strong>Price: <%= item.productprice %>(rs)per piece</strong></p>
+                            <form action="/product/<%= item.product_id %>" method="get">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-cart-shopping"></i>
+                                View
+                            </button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+    <style>
+
+        .layer {
+            margin-top: 60px;
+        }
+
+        .deals_heading {
+            text-align: center;
+            height: 50px;
+            margin: 2% 9%;
+            border: 1px dotted;
+        }
+
+        #deals {
+            margin-top: 60px;
+        }
+
+        .container {
+            margin-top: 60px;
+        }
+
+        @media (max-width: 640px) {
+            .cardmargin {
+                justify-content: center;
+            }
+        }
+
+        .card-img-top {
+            height: 286px;
+            width: 280px;
+        }
+
+        @media (min-width: 1475px) {
+            .card-img-top:hover {
+                height: 300px;
+                width: 300px;
+            }
+        }
+
+        .rows {
+            padding: 2% 9%;
+            text-align: center;
+        }
+
+        @media (max-width: 1475px) {
+            .row_cards {
+                margin: 3% 7%;
+            }
+        }
+
+        @media (min-width: 770px) {
+            .row_cards {
+                margin-left: 150px;
+            }
+        }
+
+        @media (min-width: 565px) {
+            .row_cards {
+                margin-left: 70px;
+            }
+        }
+
+        .card-img-top {
+            padding: 10% 5%;
+        }
+    </style>
+
+
+    <%- include("partials/footer.ejs") %>
