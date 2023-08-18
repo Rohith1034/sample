@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store</title>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9GolDbraUj1KMN5W9M7hKz-wKaibpdlbcuw&usqp=CAU">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c0c3f998d0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&family=Montserrat:wght@500&family=Open+Sans:wght@300&family=Roboto:wght@100;300&family=Ubuntu:ital,wght@0,500;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&family=Montserrat:wght@700&family=Open+Sans:wght@300&family=Roboto:wght@100;300&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <a class="navbar-brand" style="color: white;" href="">
+            <img class="navbar-logo1"
+                src="data:image/png;base64,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">
+        </a>
+        <a class="navbar-brand" href="/">Grocery Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My account</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="submitbtn btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: rgb(146, 226, 27);
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-size: 19px;
+            font-weight: bold;
+            color: transparent;
+        }
+
+        .navbar-logo1 {
+            height: 50px;
+            width: 70px;
+        }
+    </style>
+
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+    
+    /* Sidebar Styles */
+    .sidebar {
+      margin-top: 55px;
+      background-color: #f1f1f1;
+      width: 250px;
+      padding: 10px;
+      overflow-y: scroll;
+      height: calc(100vh - 20px);
+    }
+    
+    .sidebar h2 {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 0;
+    }
+    
+    .sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .sidebar li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      padding: 5px;
+    }
+    
+    .sidebar a:hover {
+      color: #000;
+      background-color: #e0e0e0;
+    }
+    
+    /* Content Area Styles */
+    .content {
+        margin-top: 100px;
+      flex: 1;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        float: none;
+      }
+    }
+    
+    .main {
+      margin-left: 250px;
+    }
+    </style>
+    
